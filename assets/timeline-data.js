@@ -1,10 +1,10 @@
 /* Edit this array to change the number, order, colors, and links for events. */
 window.timelineEvents = [
   {
-    year: "2019",
-    kicker: "Origin",
-    title: "The spark",
-    summary: "A first signal appears: small, bright, and impossible to ignore.",
+    year: "",
+    kicker: "Before",
+    title: "Pre-Church",
+    summary: "Before the church was formally formed",
     page: "events/01-spark.html",
     accent: "#ff6b6b",
     imageClass: "visual-spark"

@@ -18,6 +18,10 @@
 html {
   scroll-behavior: smooth;
 }
+.detail-image{
+  width: 350px;
+  height: 500px;
+}
 
 body {
   margin: 0;
