@@ -3,34 +3,103 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The spark</title>
+    <title>Pre-Church History</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../assets/styles.css" />
+<style>
+        /* CHANGED: Made the main container an inline-block div */
+        .hover-container {
+            position: relative;
+            display: inline-block; /* Keeps it in line with your normal text */
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        .trigger-text {
+            color: #0066cc;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* CHANGED: This is now a div, safely containing p and img tags */
+        .hidden-box {
+            display: none; 
+            position: absolute;
+            top: 125%; 
+            left: 0;
+            width: 220px;
+            padding: 12px;
+            background-color: #333333;
+            color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Set a safe size for any images you add inside the box */
+        .hidden-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+            margin-top: 8px;
+        }
+
+        /* Keeps paragraph margins tidy inside the tight box */
+        .hidden-box p {
+            margin: 5px 0;
+            font-size: 14px;
+            line-color: #ffffff;
+        }
+
+        /* The hover trigger rule */
+        .hover-container:hover .hidden-box {
+            display: block;
+        }
+    </style>
   </head>
   <body class="detail-page" style="--event-accent: #ff6b6b">
     <header class="site-header">
       <a class="brand" href="../index.html"><span class="brand-mark"></span><span>Timeline</span></a>
-      <a class="back-link" href="../index.html#timeline">Back to timeline</a>
+      <a class="back-link" href="../index.html#timelineframe">Back to timeline</a>
     </header>
     <main class="detail-main">
       <section class="detail-hero">
         <div>
           <p class="detail-kicker">2019 · Origin</p>
           <h1>The spark</h1>
-          <p>
-            Replace this opening paragraph with the real story for this event.
-            This page is plain HTML, so you can add images, sections, lists,
-            embeds, quotes, or anything else your host supports.
+
+          <p  style = "position: relative; z-index: 2;">
+            <br>
+            <div style="position: relative; left: 2%; width: 51%; top: 50%; height: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transform: translateY(-50%); z-index: 3; pointer-events: none; box-shadow: 0 0 8px rgba(139, 92, 246, 0.5); border-radius: 2px;"></div>
+            <div class = "hover-container" style = "position: relative; bottom: 30px;">
+              <span class = "trigger text">Creation</span>
+              <div class = "hidden-box">
+                <p1 class = "box-text">God creates the earth and humanity, and it is good</p1>
+                <img src = "../assets/images/creation.jpeg" alt = "Creation" class = 'box-img'/>
+              </div>
+            </div>
+            <!-- Copy and paste this single element between your two timeline items -->
+
+            <div class = "hover-container" style = "position: relative; left: 15px">
+              <span class = "trigger text">The fall</span>
+              <div class = "hidden-box">
+                <p1 class = "box-text">Eve is convinced by the snake to eat the forbidden fruit, and she convinces Adam, signifying their ultimate original sin, and the need for a savior</p1>
+                <img src = "../assets/images/the fall.jpeg" alt = "Creation" class = 'box-img'/>
+              </div>
+            </div>
+            <div class = "hover-container" style = "position: relative; bottom: 30px; left: 30px">
+              <span class = "trigger text">Abraham</span>
+              <div class = "hidden-box">
+                <p1 class = "box-text">Called by God to create a great kingdom, ruled by his descendants. A kingdom that would bring in God’s will on Earth, led within the promised land. Abrahamic covenant that his descendants would outnumber the stars and inherit his kingdom.</p1>
+                <img src = "../assets/images/abraham.jpeg" alt = "Creation" class = 'box-img'/>
+              </div>
+            </div>
           </p>
+
         </div>
         <img class="detail-image" src="../assets/images/Jesus.jpeg" alt="Jesus Christ of Nazareth" />
       </section>
       <section class="detail-grid">
-        <aside class="detail-facts">
-          <div class="fact"><strong>Date</strong><span>Spring 2019</span></div>
-          <div class="fact"><strong>Location</strong><span>Edit this detail</span></div>
-          <div class="fact"><strong>Status</strong><span>Seed idea</span></div>
-        </aside>
         <article class="detail-section">
           <h2>What happened</h2>
           <p>

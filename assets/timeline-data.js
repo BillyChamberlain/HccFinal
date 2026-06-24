@@ -2,7 +2,7 @@
 window.timelineEvents = [
   {
     year: "",
-    kicker: "Before",
+    kicker: "Pressure",
     title: "Pre-Church",
     summary: "Before the church was formally formed",
     page: "events/01-spark.html",
