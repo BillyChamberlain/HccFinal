@@ -20,8 +20,7 @@
         <span>Timeline</span>
       </a>
       <nav class="top-nav" aria-label="Timeline navigation">
-        <a href="#timeline">Events</a>
-        <a href="#edit">Edit</a>
+        <a href="#bottom">Events</a>
       </nav>
     </header>
 
@@ -31,25 +30,12 @@
           <p class="eyebrow">Our final</p>
           <h1 id="page-title" style = "max-width: 20000px">History of the Catholic Church</h1>
           <p>
-            By <strong style = "font-size: 30px">William Chamberlain</strong>, Saavan Goel, and Ayaan Khan
+            By <strong style = "font-size: px">William Chamberlain</strong>, Saavan Goel, and Ayaan Khan
           </p>
           <div class="hero-actions">
-            <a class="primary-link" href="#timeline">Start scrolling</a>
-            <a class="ghost-link" href="#edit">Editing notes</a>
+            <a class="primary-link" href="#timeline">Events</a>
           </div>
         </div>
-      </section>
-
-      <section class="intro-band" aria-label="Timeline overview">
-        <div>
-          <p class="section-kicker">How it moves</p>
-          <h2>Smooth vertical scroll, horizontal storytelling.</h2>
-        </div>
-        <p>
-          The page stays native and scrollable, while the timeline track eases
-          behind the scenes for that liquid, premium feel. Cards are generated
-          from <code>assets/timeline-data.js</code>, so the event count is yours.
-        </p>
       </section>
 
       <section id="timeline" class="timeline-scroll" aria-label="Scrollable event timeline">
@@ -62,7 +48,7 @@
             </div>
             <div class="timeline-frame">
               <div class="progress-wrap" aria-hidden="true">
-                <div class="progress-line"></div>
+                <div id = "timelineframe" class="progress-line"></div>
                 <div id="progressFill" class="progress-fill"></div>
               </div>
               <div id="timelineTrack" class="timeline-track"></div>
@@ -71,38 +57,6 @@
         </div>
       </section>
 
-      <section id="edit" class="edit-section" aria-labelledby="edit-title">
-        <div class="edit-panel">
-          <p class="section-kicker">Editing</p>
-          <h2 id="edit-title">Make it yours without rebuilding the whole thing.</h2>
-          <div class="edit-grid">
-            <article>
-              <h3>Change the timeline</h3>
-              <p>
-                Open <code>assets/timeline-data.js</code>. Add or remove objects
-                in the <code>timelineEvents</code> array. The home page adapts
-                automatically to the number of events.
-              </p>
-            </article>
-            <article>
-              <h3>Edit an event page</h3>
-              <p>
-                Each event links to a file in <code>events/</code>. Open any
-                event HTML file and replace the title, copy, media blocks, or
-                layout sections however you want.
-              </p>
-            </article>
-            <article>
-              <h3>Add another event</h3>
-              <p>
-                Duplicate one of the files in <code>events/</code>, rename it,
-                then add a matching object to <code>timeline-data.js</code> with
-                the new file path.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
     </main>
 
     <script src="assets/timeline-data.js"></script>

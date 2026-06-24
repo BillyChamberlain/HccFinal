@@ -2,12 +2,13 @@
   const events = window.timelineEvents || [];
   const track = document.querySelector("#timelineTrack");
   const timeline = document.querySelector("#timeline");
+  const timelineFrame = document.querySelector(".timeline-frame");
   const activeTitle = document.querySelector("#activeTitle");
   const activeSummary = document.querySelector("#activeSummary");
   const progressFill = document.querySelector("#progressFill");
   const canvas = document.querySelector("#skyCanvas");
 
-  if (!track || !timeline || !events.length) return;
+  if (!track || !timeline || !timelineFrame || !events.length) return;
 
   const cardMarkup = events
     .map(
@@ -43,11 +44,8 @@
   }
 
   function resizeTimeline() {
-    const viewport = window.innerWidth;
-    const scrollWidth = track.scrollWidth;
-    maxShift = Math.max(0, scrollWidth - viewport + 48);
-    const scrollLength = Math.max(window.innerHeight * 2.8, maxShift + window.innerHeight * 0.9);
-    timeline.style.height = `${scrollLength + window.innerHeight}px`;
+    maxShift = Math.max(0, timelineFrame.scrollWidth - timelineFrame.clientWidth);
+    timeline.style.height = "";
     updateScroll();
   }
 
@@ -65,10 +63,8 @@
   }
 
   function updateScroll() {
-    const rect = timeline.getBoundingClientRect();
-    const total = timeline.offsetHeight - window.innerHeight;
-    const raw = clamp(-rect.top / Math.max(total, 1), 0, 1);
-    targetShift = raw * maxShift;
+    const raw = clamp(timelineFrame.scrollLeft / Math.max(maxShift, 1), 0, 1);
+    targetShift = timelineFrame.scrollLeft;
     if (progressFill) progressFill.style.transform = `scaleX(${raw})`;
     updateActive(raw);
     if (!ticking) {
@@ -80,7 +76,6 @@
   function animate() {
     currentShift += (targetShift - currentShift) * 0.095;
     if (Math.abs(targetShift - currentShift) < 0.05) currentShift = targetShift;
-    track.style.transform = `translate3d(${-currentShift}px, 0, 0)`;
 
     cards.forEach((card, index) => {
       const cardCenter = card.offsetLeft + card.offsetWidth / 2 - currentShift;
@@ -147,7 +142,7 @@
   }
 
   window.addEventListener("resize", resizeTimeline, { passive: true });
-  window.addEventListener("scroll", updateScroll, { passive: true });
+  timelineFrame.addEventListener("scroll", updateScroll, { passive: true });
   resizeTimeline();
   initCanvas();
 })();

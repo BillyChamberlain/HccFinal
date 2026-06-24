@@ -215,10 +215,9 @@ h1 {
 }
 
 .timeline-sticky {
-  position: sticky;
-  top: 0;
+  position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .timeline-shell {
@@ -266,7 +265,29 @@ h1 {
   position: relative;
   min-height: 430px;
   min-width: 0;
-  overflow: visible;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  scroll-padding-inline: clamp(22px, 6vw, 86px);
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(248, 243, 232, 0.34) rgba(248, 243, 232, 0.08);
+}
+
+.timeline-frame::-webkit-scrollbar {
+  height: 12px;
+}
+
+.timeline-frame::-webkit-scrollbar-track {
+  background: rgba(248, 243, 232, 0.08);
+}
+
+.timeline-frame::-webkit-scrollbar-thumb {
+  border: 3px solid rgba(8, 17, 31, 0.82);
+  border-radius: 999px;
+  background: rgba(248, 243, 232, 0.42);
 }
 
 .progress-wrap {
@@ -298,7 +319,6 @@ h1 {
   gap: clamp(18px, 3vw, 34px);
   width: max-content;
   padding: 70px clamp(22px, 6vw, 86px) 30px;
-  will-change: transform;
 }
 
 .event-card {
@@ -306,7 +326,9 @@ h1 {
   --tilt: 0deg;
   --parallax: 0px;
   width: clamp(282px, 34vw, 470px);
+  flex: 0 0 auto;
   min-height: 360px;
+  scroll-snap-align: center;
   transform:
     translateY(calc((1 - var(--lift)) * 42px))
     rotate(var(--tilt))
