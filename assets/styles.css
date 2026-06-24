@@ -161,7 +161,7 @@ h1 {
   max-width: 900px;
   margin-bottom: 1.2rem;
   font-size: clamp(4rem, 12vw, 8.9rem);
-  line-height: 0.88;
+  line-height: 0.99;
   letter-spacing: 0;
 }
 
@@ -259,10 +259,14 @@ h1 {
 .timeline-meta #activeSummary {
   grid-column: 2;
   grid-row: 1 / span 2;
-  max-width: 620px;
+  max-width: 900px;
   min-width: 0;
   margin: 0;
   overflow-wrap: break-word;
+}
+#activeTitle{
+  max-width: 2000px;
+  min-width: 2000px;
 }
 
 .timeline-frame {

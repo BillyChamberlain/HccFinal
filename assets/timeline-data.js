@@ -2,7 +2,7 @@
 window.timelineEvents = [
   {
     year: "",
-    kicker: "Pressure",
+    kicker: "The beginning",
     title: "Pre-Church",
     summary: "Before the church was formally formed",
     page: "events/01-spark.html",
@@ -10,10 +10,10 @@ window.timelineEvents = [
     imageClass: "visual-spark"
   },
   {
-    year: "2020",
-    kicker: "Pressure",
-    title: "The hard pivot",
-    summary: "Plans compress, priorities sharpen, and the direction changes fast.",
+    year: "",
+    kicker: "Definition",
+    title: "What is the Church?",
+    summary: "Definitions and summaries of what the church is",
     page: "events/02-pivot.html",
     accent: "#ffd166",
     imageClass: "visual-pivot"
