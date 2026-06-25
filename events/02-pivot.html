@@ -12,6 +12,21 @@
       position: relative;
       display: inline-block;
     }
+    .hero-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 0px;
+    position: relative;
+    right: 50px;           
+    }
+
+    .detail-facts {
+    flex: 0 0 300px;
+}
+
+    .diagram-container {
+        flex-shrink: 0;
+    }
 
     .base-image {
       display: block;
@@ -85,7 +100,7 @@
             display: none; 
             position: absolute;
             top: 125%; 
-            left: 0;
+            right: 45px;
             width: 270px;
             padding: 12px;
             background-color: #333333;
@@ -126,9 +141,17 @@
         <div>
           <p class="detail-kicker">Summary</p>
           <h1>What is the Church?</h1>
+          <div class = "hero-content">
+          <aside class="detail-facts" style = "max-width: 250px">
+            <br><br><br><br>
+          <div class="fact"><strong>One</strong><span>United</span></div>
+          <div class="fact"><strong>Holy</strong><span>Seperated for a divine purpose</span></div>
+          <div class="fact"><strong>Catholic</strong><span>Universal</span></div>
+          <div class="fact"><strong>Apostolic</strong><span>Fallowing the line of the first apostles</span></div>
+        </aside>
           <p>
-            <div class="diagram-container" id="diagram">
-            <img src="../assets/images/birth.png" alt="Target Diagram" class="base-image" id="bg-image" style = "padding: 30px; width: 800px; height: 400px">
+            <div class="diagram-container" id="diagram" style = "width: 1200px; height: 700px">
+            <img src="../assets/images/vatican.png" alt="Target Diagram" class="base-image" id="bg-image" style = "padding: 50px; width: 1200px; height: 700px">
             <canvas class="arrow-canvas" id="canvas"></canvas>
 
             <!-- 
@@ -136,18 +159,37 @@
               1. Set data-start-x and data-start-y to position the text label block.
               2. Set data-target-x and data-target-y to set exactly where the arrowhead points on the image.
             -->
-            <div class="label-text" data-start-x="0" data-start-y="0" data-target-x="370" data-target-y="170">
+            <div class="label-text" data-start-x="0" data-start-y="0" data-target-x="470" data-target-y="400">
               <div class = "hover-container">
-              <span class = "trigger text">Cow</span>
+              <span class = "trigger text">catholic</span>
               <div class = "hidden-box">
-                <p1 class = "box-text">It is in fact a cow</p1>
-                <img src = "../assets/images/creation.jpeg" alt = "Creation" class = 'box-img'/>
+                <p1 class = "box-text">A universal church, everyone is allowed</p1>
               </div>
             </div>
             </div>
-
-            <div class="label-text" data-start-x="550" data-start-y="400" data-target-x="250" data-target-y="225">
-              Jesus
+            <div class="label-text" data-start-x="1100" data-start-y="600" data-target-x="700" data-target-y="500">
+              <div class = "hover-container">
+              <span class = "trigger text">chuch</span>
+              <div class = "hidden-box">
+                <p1 class = "box-text">The gathering of people to God</p1>
+              </div>
+            </div>
+            </div>
+            <div class="label-text" data-start-x="1100" data-start-y="0" data-target-x="600" data-target-y="400">
+              <div class = "hover-container">
+              <span class = "trigger text">Catholic</span>
+              <div class = "hidden-box">
+                <p1 class = "box-text">Roman Catholic church</p1>
+              </div>
+            </div>
+            </div>
+            <div class="label-text" data-start-x="0" data-start-y="600" data-target-x="700" data-target-y="600">
+              <div class = "hover-container">
+              <span class = "trigger text">Bride and Body</span>
+              <div class = "hidden-box">
+                <p1 class = "box-text">The church is the bride and the body of Christ</p1>
+              </div>
+            </div>
             </div>
           </div>
 
@@ -159,51 +201,49 @@
             const labels = document.querySelectorAll('.label-text');
 
             function drawDiagram() {
-              // Step 1: Size the canvas to match the displayed image exactly
               const rect = container.getBoundingClientRect();
               canvas.width = rect.width;
               canvas.height = rect.height;
 
-              // Clear previous drawings
               ctx.clearRect(0, 0, canvas.width, canvas.height);
 
               labels.forEach(label => {
-                // Read your custom coordinates
-                const startX = parseFloat(label.getAttribute('data-start-x'));
-                const startY = parseFloat(label.getAttribute('data-start-y'));
-                const targetX = parseFloat(label.getAttribute('data-target-x'));
-                const targetY = parseFloat(label.getAttribute('data-target-y'));
+                const startX = parseFloat(label.dataset.startX);
+                const startY = parseFloat(label.dataset.startY);
+                const targetX = parseFloat(label.dataset.targetX);
+                const targetY = parseFloat(label.dataset.targetY);
 
-                // Step 2: Position the text HTML element
-                label.style.left = startX + 'px';
-                label.style.top = startY + 'px';
+                label.style.left = `${startX}px`;
+                label.style.top = `${startY}px`;
 
-                // Step 3: Calculate canvas attachment point (center-right of the text block)
                 const labelWidth = label.offsetWidth;
                 const labelHeight = label.offsetHeight;
-                
-                // Defaulting line attachment to the center of the text box
-                const lineStartX = startX + (labelWidth / 2);
-                const lineStartY = startY + (labelHeight / 2);
 
-                // Step 4: Draw the connecting line
+                const lineStartX = startX + labelWidth / 2;
+                const lineStartY = startY + labelHeight / 2;
+
                 ctx.beginPath();
                 ctx.moveTo(lineStartX, lineStartY);
                 ctx.lineTo(targetX, targetY);
-                ctx.strokeStyle = '#ff3333'; // Arrow line color
-                ctx.lineWidth = 3;           // Arrow line thickness
+                ctx.strokeStyle = '#ff3333';
+                ctx.lineWidth = 3;
                 ctx.lineCap = 'round';
                 ctx.stroke();
 
-                // Step 5: Draw the arrowhead at the target coordinates
                 const angle = Math.atan2(targetY - lineStartY, targetX - lineStartX);
-                const arrowLength = 15; // Size of arrowhead
+                const arrowLength = 15;
 
                 ctx.beginPath();
                 ctx.moveTo(targetX, targetY);
-                ctx.lineTo(targetX - arrowLength * Math.cos(angle - Math.PI / 6), targetY - arrowLength * Math.sin(angle - Math.PI / 6));
+                ctx.lineTo(
+                  targetX - arrowLength * Math.cos(angle - Math.PI / 6),
+                  targetY - arrowLength * Math.sin(angle - Math.PI / 6)
+                );
                 ctx.moveTo(targetX, targetY);
-                ctx.lineTo(targetX - arrowLength * Math.cos(angle + Math.PI / 6), targetY - arrowLength * Math.sin(angle + Math.PI / 6));
+                ctx.lineTo(
+                  targetX - arrowLength * Math.cos(angle + Math.PI / 6),
+                  targetY - arrowLength * Math.sin(angle + Math.PI / 6)
+                );
                 ctx.strokeStyle = '#ff3333';
                 ctx.lineWidth = 4;
                 ctx.stroke();
@@ -219,8 +259,8 @@
             window.addEventListener('resize', drawDiagram);
           </script>
           </p>
+          </div>
         </div>
-        <div class="detail-art visual-pivot" aria-hidden="true"></div>
       </section>
       <section class="detail-grid">
         <article class="detail-section">
@@ -232,24 +272,24 @@
                 <img src = "../assets/images/paschal.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
             </div>
             </a>
-            <a href = "../events/02-images_info/paschal_mystery.html">
+            <a href = "../events/02-images_info/Invisible_grace.html">
             <div class = "img_div">
-                <img src = "../assets/images/paschal.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
+                <img src = "../assets/images/invisible grace.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
             </div>
             </a>
-            <a href = "../events/02-images_info/paschal_mystery.html">
+            <a href = "../events/02-images_info/people_of_god.html">
             <div class = "img_div">
-                <img src = "../assets/images/paschal.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
+                <img src = "../assets/images/People of God.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
             </div>
             </a>
-            <a href = "../events/02-images_info/paschal_mystery.html">
+            <a href = "../events/02-images_info/Body of christ.html">
             <div class = "img_div">
-                <img src = "../assets/images/paschal.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
+                <img src = "../assets/images/Body of Christ.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
             </div>
             </a>
-            <a href = "../events/02-images_info/paschal_mystery.html">
+            <a href = "../events/02-images_info/Temple of the holy spirit.html">
             <div class = "img_div">
-                <img src = "../assets/images/paschal.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
+                <img src = "../assets/images/Temple of the holy spirit.jpeg" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
             </div>
             </a>
             </div>
