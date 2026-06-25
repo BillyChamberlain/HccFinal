@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The hard pivot</title>
+    <title>Church Summary</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../assets/styles.css" />
   <style>
@@ -19,17 +19,29 @@
       height: auto;
     }
     .img_div{
-      width: 350px;
-      height: 235px;
+      width: 250px;
+      height: 165px;  
       display: flex;
-      background-color: black;
+      background: linear-gradient(to right, #00023766, #14002866);
       justify-content: center;
       align-items: center;
       transition: transform 0.2s ease-in-out;
     }
+    .img_div img{
+      opacity: 1;
+    }
     .img_div:hover{
       transform: scale(1.1);
       cursor:pointer;
+    }
+    .img_row{
+      display: flex;
+      gap: 10px;
+      position: relative;
+      right: 15px;
+    }
+    .img_row a{
+      display: block;
     }
 
     /* Invisible canvas layer perfectly overlaying the image */
@@ -211,25 +223,36 @@
         <div class="detail-art visual-pivot" aria-hidden="true"></div>
       </section>
       <section class="detail-grid">
-        <aside class="detail-facts">
-          <div class="fact"><strong>Date</strong><span>Late 2020</span></div>
-          <div class="fact"><strong>Location</strong><span>Edit this detail</span></div>
-          <div class="fact"><strong>Theme</strong><span>Change and focus</span></div>
-        </aside>
         <article class="detail-section">
-          <h2>What changed</h2>
+          <h2 style = "max-width: 10000px; min-width: 1225px; text-align: center">Images of the Church</h2>
+          <br><br>
+          <div class = "img_row">
           <a href = "../events/02-images_info/paschal_mystery.html">
             <div class = "img_div">
                 <img src = "../assets/images/paschal.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
             </div>
             </a>
-          <p>
-          </p>
-          <ul>
-            <li>Add bullets for milestones.</li>
-            <li>Drop in images with standard <code>&lt;img&gt;</code> tags.</li>
-            <li>Link to other pages or external references.</li>
-          </ul>
+            <a href = "../events/02-images_info/paschal_mystery.html">
+            <div class = "img_div">
+                <img src = "../assets/images/paschal.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
+            </div>
+            </a>
+            <a href = "../events/02-images_info/paschal_mystery.html">
+            <div class = "img_div">
+                <img src = "../assets/images/paschal.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
+            </div>
+            </a>
+            <a href = "../events/02-images_info/paschal_mystery.html">
+            <div class = "img_div">
+                <img src = "../assets/images/paschal.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
+            </div>
+            </a>
+            <a href = "../events/02-images_info/paschal_mystery.html">
+            <div class = "img_div">
+                <img src = "../assets/images/paschal.png" alt = "Paschal Mystery" style = "width: 96%; max-height: 96%; height: auto">
+            </div>
+            </a>
+            </div>
         </article>
       </section>
     </main>

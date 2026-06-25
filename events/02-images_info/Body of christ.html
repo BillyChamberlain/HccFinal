@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The hard pivot</title>
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../../assets/styles.css" />
+  <style>
+    /* Holds the image, canvas, and text elements in one unified coordinate space */
+    .diagram-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .base-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    .img_div{
+      width: 350px;
+      height: 235px;
+      display: flex;
+      background-color: black;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.2s ease-in-out;
+    }
+    .img_div:hover{
+      transform: scale(1.1);
+      cursor:pointer;
+    }
+
+    /* Invisible canvas layer perfectly overlaying the image */
+    .arrow-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Allows user to still click elements underneath */
+    }
+
+    /* Clean text styling */
+    .label-text {
+      position: absolute;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #222222;
+      padding: 6px 12px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+
+    .hover-container {
+            position: relative;
+            display: inline-block; /* Keeps it in line with your normal text */
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        .trigger-text {
+            color: #0066cc;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* CHANGED: This is now a div, safely containing p and img tags */
+        .hidden-box {
+            display: none; 
+            position: absolute;
+            top: 125%; 
+            left: 0;
+            width: 270px;
+            padding: 12px;
+            background-color: #333333;
+            color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Set a safe size for any images you add inside the box */
+        .hidden-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+            margin-top: 8px;
+        }
+
+        /* Keeps paragraph margins tidy inside the tight box */
+        .hidden-box p {
+            margin: 5px 0;
+            font-size: 14px;
+            line-color: #ffffff;
+        }
+
+        /* The hover trigger rule */
+        .hover-container:hover .hidden-box {
+            display: block;
+        }
+  </style>
+  </head>
+  <body class="detail-page" style="--event-accent: #ffd166">
+    <header class="site-header">
+      <a class="brand" href="../index.html"><span class="brand-mark"></span><span>Timeline</span></a>
+      <a class="back-link" href="../02-pivot.html">Back to summary</a>
+    </header>
+    <main class="detail-main">
+      <section class="detail-hero">
+        <div>
+          <p class="detail-kicker">Summary</p>
+          <h1>The Paschal Mystery</h1>
+          <p style = "display: block; padding-right: 50px">
+            The paschal mystery relates to the story of how Jesus died for us and our sins. blah blah blah
+          </p>
+        </div>
+        <div style = "width: 600px; height: 500px; position: relative; right: 100px">
+            <img src = "../../assets/images/paschal.png" alt = "Paschal Mystery" style = "width: 100%; max-height: 100%; height: auto">
+        </div>
+      </section>
+      <section class="detail-grid">
+        <article class="detail-section">
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
