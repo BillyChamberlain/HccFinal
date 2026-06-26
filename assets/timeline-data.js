@@ -19,10 +19,10 @@ window.timelineEvents = [
     imageClass: "visual-pivot"
   },
   {
-    year: "2021",
-    kicker: "Build",
-    title: "The first system",
-    summary: "Loose pieces become a working structure with repeatable momentum.",
+    year: "",
+    kicker: "Rome",
+    title: "Roman Rule",
+    summary: "The time when the church was under Rome",
     page: "events/03-system.html",
     accent: "#06d6a0",
     imageClass: "visual-system"

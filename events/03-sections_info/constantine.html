@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pre-Church History</title>
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../../assets/styles.css" />
+<style>
+        /* CHANGED: Made the main container an inline-block div */
+        .hover-container {
+            position: relative;
+            display: inline-block; /* Keeps it in line with your normal text */
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        .trigger-text {
+            color: #0066cc;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* CHANGED: This is now a div, safely containing p and img tags */
+        .hidden-box {
+            display: none; 
+            position: absolute;
+            bottom: 130%; 
+            left: 0;
+            width: 270px;
+            padding: 12px;
+            background-color: #333333;
+            color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Set a safe size for any images you add inside the box */
+        .hidden-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+            margin-top: 8px;
+        }
+
+        /* Keeps paragraph margins tidy inside the tight box */
+        .hidden-box p {
+            margin: 5px 0;
+            font-size: 14px;
+            line-color: #ffffff;
+        }
+
+        /* The hover trigger rule */
+        .hover-container:hover .hidden-box {
+            display: block;
+        }
+    </style>
+  </head>
+  <body class="detail-page" style="--event-accent: #ff6b6b">
+    <header class="site-header">
+      <a class="brand" href="../index.html"><span class="brand-mark"></span><span>Timeline</span></a>
+      <a class="back-link" href="../03-system.html">Back to Roman Occupation</a>
+    </header>
+    <main class="detail-main">
+      <section class="detail-hero">
+        <div>
+          <p class="detail-kicker">Roman Occupation</p>
+          <h1>Constantine</h1>
+
+          <p  style = "position: relative; z-index: 2;">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div style="position: relative; left: 2%; width: 190%; top: 50%; height: 4px; background: linear-gradient(90deg, #c3e600, #9da231); transform: translateY(-50%); z-index: 3; pointer-events: none; box-shadow: 0 0 8px rgba(139, 92, 246, 0.5); border-radius: 2px;"></div>
+            <div class = "hover-container" style = "position: relative; bottom: 30px;">
+              <span class = "trigger text">Vision</span>
+              <div class = "hidden-box">
+                <p1 class = "box-text">Before a battle, Constantine has a vision that he will will the battle if he puts Chi Rho on his shields</p1>
+                <img src = "../../assets/images/constantine_vision.png" alt = "vision" class = 'box-img'/>
+              </div>
+            </div>
+
+            <div class = "hover-container" style = "position: relative; left: 100px; top: 5px">
+              <span class = "trigger text">Battle of Milvian Bridge</span>
+              <div class = "hidden-box">
+                <p1 class = "box-text">Constantine goes into battle, and it is a battle that he ultimately should not win</p1>
+                <img src = "../../assets/images/milvian.png" alt = "Creation" class = 'box-img'/>
+              </div>
+            </div>
+            <div class = "hover-container" style = "position: relative; bottom: 30px; left: 200px">
+              <span class = "trigger text">Victory</span>
+              <div class = "hidden-box">
+                <p1 class = "box-text">Almost miraculously, Constantine wins this battle, and he sees the Christian God as more powerful than the Roman deities</p1>
+                <img src = "../../assets/images/milvian_victory.png" alt = "Creation" class = 'box-img'/>
+              </div>
+            </div>
+            <div class = "hover-container" style = "position: relative; left: 300px; top: 5px">
+              <span class = "trigger text">Edict of Milan</span>
+              <div class = "hidden-box">
+                <p1 class = "box-text">Issues religious freedom and since the emperor is Christian, a lot of people become attracted to the religion</p1>
+                <img src = "../../assets/images/edict_funny.png" alt = "Creation" class = 'box-img'/>
+              </div>
+            </div>
+            <div class = "hover-container" style = "position: relative; bottom: 30px; left: 400px; z-index: 1000;">
+              <span class = "trigger text">Conversion</span>
+              <div class = "hidden-box">
+                <p1 class = "box-text">Constantine fully converts to Christianity and pursues his faith fully</p1>
+                <img src = "../../assets/images/nicea.png" alt = "Creation" class = 'box-img'/>
+              </div>
+            </div>
+            <div class = "hover-container" style = "position: relative; top: 5px; left: 500px">
+              <span class = "trigger text">Ecumenical Councils</span>
+              <div class = "hidden-box">
+                <p1 class = "box-text">Constantine issues the first ecumenical councils, which call all the bishops together to discuss church matters</p1>
+                <img src = "../../assets/images/nicea.png" alt = "Creation" class = 'box-img'/>
+              </div>
+            </div>
+          
+        </div>
+          <div style = "width: 600px; height: 500px; position: relative; right: 100px">
+            <img src = "../../assets/images/Constantine.png" alt = "Paschal Mystery" style = "width: 100%; max-height: 100%; height: auto; border-radius: 15px">
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
