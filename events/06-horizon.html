@@ -6,6 +6,132 @@
     <title>The open horizon</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../assets/styles.css" />
+      <style>
+    /* Holds the image, canvas, and text elements in one unified coordinate space */
+    .diagram-container {
+      position: relative;
+      display: inline-block;
+    }
+    .hero-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 0px;
+    position: relative;
+    right: 50px;           
+    }
+
+    .detail-facts {
+    flex: 0 0 300px;
+}
+
+    .diagram-container {
+        flex-shrink: 0;
+    }
+
+    .base-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    .img_div{
+      transition: transform 0.3s ease-in-out;
+      transform-style: preserve-3d; 
+    }
+    .img_div:hover{
+      transform: scale(1.1);
+      cursor:pointer;
+    }
+    .img_row{
+      display: flex;
+      gap: 10px;
+      position: relative;
+      right: 15px;
+    }
+
+    /* Invisible canvas layer perfectly overlaying the image */
+    .arrow-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Allows user to still click elements underneath */
+    }
+
+    /* Clean text styling */
+    .label-text {
+      position: absolute;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #222222;
+      padding: 6px 12px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+
+    .hover-container {
+            position: relative;
+            display: inline-block; /* Keeps it in line with your normal text */
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        .trigger-text {
+            color: #0066cc;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* CHANGED: This is now a div, safely containing p and img tags */
+        .hidden-box {
+            display: none; 
+            position: absolute;
+            top: 125%; 
+            right: 0px;
+            width: 270px;
+            padding: 12px;
+            background-color: #333333;
+            color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Set a safe size for any images you add inside the box */
+        .hidden-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+            margin-top: 8px;
+        }
+
+        /* Keeps paragraph margins tidy inside the tight box */
+        .hidden-box p {
+            margin: 5px 0;
+            font-size: 14px;
+            line-color: #ffffff;
+        }
+
+        /* The hover trigger rule */
+        .hover-container:hover .hidden-box {
+            display: block;
+        }
+        .tree-head{
+          display: block;
+          width: 400px;
+          max-height: 1000px;
+          height: auto;
+          text-align: center;
+          background: linear-gradient(to right, #00064753, #14002866);
+        }
+        .fuck{
+          display: flex;
+          justify-content: center;
+        }
+
+  </style>
   </head>
   <body class="detail-page" style="--event-accent: #f783ac">
     <header class="site-header">
@@ -15,31 +141,24 @@
     <main class="detail-main">
       <section class="detail-hero">
         <div>
-          <p class="detail-kicker">2026 · Next</p>
-          <h1>The open horizon</h1>
+          <p class="detail-kicker"><a href = "../assets/images/mlk.png" style = "text-decoration: none;">A black rights advocate</a></p>
+          <h1>Martin Luther</h1>
           <p>
-            Future-facing events work here too. Keep it as a closing chapter or
-            duplicate it whenever you need another page.
+            <ul style = "font-size: 18px">
+              <li style = "padding-top: 15px">Martin Luther, a German monk, reconized this and came up with 95 theses exposing and condemning the acts of the Medici Popes</li>
+              <li style = "padding-top: 10px">He was excommunicated, but his followers ransacked the city and split off into a new denomination, Lutheran Protestantism</li>
+            </ul>
           </p>
         </div>
-        <div class="detail-art visual-horizon" aria-hidden="true"></div>
+        <div style = "display: flex; flex-wrap: wrap; align-items: center; justify-content: center">
+          <img src = "../assets/images/luther.png" style = "width: 50%">
+        <a href="../events/06-cool-idea/pt2.html" style="display: block; width: 60%; margin: 5% auto 0 auto; background: linear-gradient(135deg, #27272753, #0a0a0a66); border-radius: 50px; text-decoration: none; color: initial;" class = "img_div">
+          <p style="font-size: 30px; text-align: center; padding: 5%"><strong>What happens next?</strong></p>
+        </a>
+        </div>
       </section>
       <section class="detail-grid">
-        <aside class="detail-facts">
-          <div class="fact"><strong>Date</strong><span>2026</span></div>
-          <div class="fact"><strong>Direction</strong><span>Edit this detail</span></div>
-          <div class="fact"><strong>Next step</strong><span>Open-ended</span></div>
-        </aside>
         <article class="detail-section">
-          <h2>What comes next</h2>
-          <p>
-            Use this section to point toward the future, outline goals, or
-            explain the next phase.
-          </p>
-          <p>
-            The site is plain static HTML, CSS, and JavaScript, so uploading is
-            just a matter of placing this folder on your host.
-          </p>
         </article>
       </section>
     </main>

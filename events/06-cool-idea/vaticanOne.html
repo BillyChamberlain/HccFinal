@@ -3,14 +3,29 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The hard pivot</title>
+    <title>The open horizon</title>
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../../assets/styles.css" />
-  <style>
+      <style>
     /* Holds the image, canvas, and text elements in one unified coordinate space */
     .diagram-container {
       position: relative;
       display: inline-block;
+    }
+    .hero-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 0px;
+    position: relative;
+    right: 50px;           
+    }
+
+    .detail-facts {
+    flex: 0 0 300px;
+}
+
+    .diagram-container {
+        flex-shrink: 0;
     }
 
     .base-image {
@@ -19,17 +34,21 @@
       height: auto;
     }
     .img_div{
-      width: 350px;
-      height: 235px;
-      display: flex;
-      background-color: black;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.2s ease-in-out;
+      transition: transform 0.3s ease-in-out;
+      transform-style: preserve-3d; 
     }
     .img_div:hover{
       transform: scale(1.1);
       cursor:pointer;
+    }
+    .img_row{
+      display: flex;
+      gap: 10px;
+      position: relative;
+      right: 15px;
+    }
+    .img_row a{
+      display: block;
     }
 
     /* Invisible canvas layer perfectly overlaying the image */
@@ -73,7 +92,7 @@
             display: none; 
             position: absolute;
             top: 125%; 
-            left: 0;
+            right: 0px;
             width: 270px;
             padding: 12px;
             background-color: #333333;
@@ -102,24 +121,45 @@
         .hover-container:hover .hidden-box {
             display: block;
         }
+        .tree-head{
+          display: block;
+          width: 400px;
+          max-height: 1000px;
+          height: auto;
+          text-align: center;
+          background: linear-gradient(to right, #00064753, #14002866);
+        }
+        .fuck{
+          display: flex;
+          justify-content: center;
+        }
+
   </style>
   </head>
-  <body class="detail-page" style="--event-accent: #ffd166">
+  <body class="detail-page" style="--event-accent: #f783ac">
     <header class="site-header">
       <a class="brand" href="../../index.html"><span class="brand-mark"></span><span>Timeline</span></a>
-      <a class="back-link" href="../03-system.html">Back to Roman occupation</a>
+      <a class="back-link" href="../../index.html#timeline">Back to timeline</a>
     </header>
     <main class="detail-main">
       <section class="detail-hero">
         <div>
-          <p class="detail-kicker">Roman Occupation</p>
-          <h1 style = "padding-right: 50px">Early church councils</h1>
-          <p style = "display: block; padding-right: 50px">
-            The Apostolic and Ecumenical Councils were gatherings of the Magisterium to address important church issues and stop heresies
+          <p class="detail-kicker"><a href = "../../assets/images/mlk.png" style = "text-decoration: none;">The definitions</a></p>
+          <h1>Vatican I</h1>
+          <p>
+            <ul style = "font-size: 18px">
+              <li style = "padding-top: 15px">The first Vatican Council was called to address the ideas of the Enlightenment and the Age of Reason that were pulling people away from the Church’s teachings. </li>
+              <li style = "padding-top: 10px">It defended the Church from secularism and rationalism, while strengthening the Popes authority to be centralized and infallible while speaking “Ex Cathedra.”</li>
+              <li style = "padding-top: 10px">However, it did leave a major gap in the role of Bishops and the Laity in spreading the Catholic faith.</li>
+              <li style = "padding-top: 10px">That's it, no need to go further</li>
+            </ul>
           </p>
         </div>
-        <div style = "width: 600px; height: 500px; position: relative; right: 100px">
-            <img src = "../../assets/images/early_council.png" alt = "Paschal Mystery" style = "width: 100%; max-height: 100%; height: auto; border-radius: 15px">
+        <div style = "display: flex; flex-wrap: wrap; align-items: center; justify-content: center">
+          <img src = "../../assets/images/vaticanOne.png" style = "width: 50%">
+        <a href="../06-cool-idea/greed.html" style="display: block; width: 60%; margin: 5% auto 0 auto; background: linear-gradient(135deg, #27272753, #0a0a0a66); border-radius: 50px; text-decoration: none; color: initial;" class = "img_div">
+          <p style="font-size: 30px; text-align: center; padding: 5%"><strong>What happens next?</strong></p>
+        </a>
         </div>
       </section>
       <section class="detail-grid">

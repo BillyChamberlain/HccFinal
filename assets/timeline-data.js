@@ -37,21 +37,30 @@ window.timelineEvents = [
     imageClass: "visual-launch"
   },
   {
-    year: "2024",
-    kicker: "Scale",
-    title: "The wider network",
-    summary: "More people, more context, more rhythm, and a much larger stage.",
+    year: "",
+    kicker: "Congrats if ur reading this",
+    title: "The Middle Ages",
+    summary: "The church during the middle ages",
     page: "events/05-network.html",
     accent: "#b197fc",
     imageClass: "visual-network"
   },
   {
-    year: "2026",
-    kicker: "Next",
-    title: "The open horizon",
-    summary: "The timeline points forward, with room for everything still coming.",
+    year: "",
+    kicker: "Martin Luther King Jr",
+    title: "Reformation",
+    summary: "The church has some paper nailed to its door, and people are angry",
     page: "events/06-horizon.html",
     accent: "#f783ac",
     imageClass: "visual-horizon"
+  },
+  {
+    year: "",
+    kicker: "Now",
+    title: "Modernization & The New World",
+    summary: "What has been going on relatively recently",
+    page: "events/07-final.html",
+    accent: "#00ff2a",
+    imageClass: "visual-spark"
   }
 ];
