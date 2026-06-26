@@ -62,5 +62,14 @@ window.timelineEvents = [
     page: "events/07-final.html",
     accent: "#00ff2a",
     imageClass: "visual-spark"
-  }
+  },
+  {
+    year: "",
+    kicker: "Yay",
+    title: "The end",
+    summary: "No new info will be on this slide",
+    page: "https://www.youtube.com/watch?v=T1XgFsitnQw",
+    accent: "#5e0091",
+    imageClass: "visual-network"
+  },
 ];
