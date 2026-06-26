@@ -27,6 +27,7 @@
     /* Hides scrollbar for a cleaner look (optional) */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    transition: transform 0.3s ease-in-out;
   }
 
   /* Hides scrollbar for Chrome, Safari, and Opera */
@@ -49,7 +50,12 @@
     height: 100%;
     /* Ensures the image fills the area beautifully without distorting */
     object-fit: cover; 
+    border-radius: 10px;
   }
+    .outer:hover{
+      transform: scale(1.1);
+      cursor:pointer;
+    }
     </style>
   </head>
   <body class="detail-page" style="--event-accent: #4dabf7">
