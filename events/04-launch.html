@@ -6,6 +6,51 @@
     <title>The public launch</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../assets/styles.css" />
+    <style>
+    .outer {
+    display: flex;
+    width: 800px;
+    max-height: 1400px;
+    height: auto; 
+    position: relative;
+    top: 10%;
+    left: 40%;
+    /* Enables horizontal scrolling */
+    overflow-x: auto; 
+    
+    /* Smooth scrolling behavior */
+    scroll-behavior: smooth; 
+    
+    /* Tells the container to snap on the X axis strictly */
+    scroll-snap-type: x mandatory; 
+    
+    /* Hides scrollbar for a cleaner look (optional) */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Hides scrollbar for Chrome, Safari, and Opera */
+  .outer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .outer a {
+    /* Forces each link/image to take up exactly 100% of the container width */
+    flex: 0 0 100%; 
+    width: 100%;
+    height: 100%;
+    
+    /* Tells the container exactly where to snap this element */
+    scroll-snap-align: start; 
+  }
+
+  .outer img {
+    width: 100%;
+    height: 100%;
+    /* Ensures the image fills the area beautifully without distorting */
+    object-fit: cover; 
+  }
+    </style>
   </head>
   <body class="detail-page" style="--event-accent: #4dabf7">
     <header class="site-header">
@@ -17,29 +62,27 @@
         <div>
           <p class="detail-kicker">2022 · Reach</p>
           <h1>The public launch</h1>
-          <p>
-            Write the event story here. The big visual panel uses CSS, but you
-            can replace it with an image or video if you have one.
-          </p>
+          <div class="outer">
+            <a href="https://example.com/page1">
+              <img src="https://picsum.photos/800/500?random=1" alt="Image 1">
+            </a>
+            <a href="https://example.com/page2">
+              <img src="https://picsum.photos/800/500?random=2" alt="Image 2">
+            </a>
+            <a href="https://example.com/page3">
+              <img src="https://picsum.photos/800/500?random=3" alt="Image 3">
+            </a>
+            <a href="https://example.com/page4">
+              <img src="https://picsum.photos/800/500?random=4" alt="Image 4">
+            </a>
+            <a href="https://example.com/page5">
+              <img src="https://picsum.photos/800/500?random=5" alt="Image 5">
+            </a>
+          </div>
         </div>
-        <div class="detail-art visual-launch" aria-hidden="true"></div>
       </section>
       <section class="detail-grid">
-        <aside class="detail-facts">
-          <div class="fact"><strong>Date</strong><span>Launch day</span></div>
-          <div class="fact"><strong>Audience</strong><span>Edit this detail</span></div>
-          <div class="fact"><strong>Result</strong><span>Public release</span></div>
-        </aside>
         <article class="detail-section">
-          <h2>Launch notes</h2>
-          <p>
-            Add the launch details, announcement text, gallery, metrics, or
-            reactions here.
-          </p>
-          <p>
-            The return button points back to the timeline section on the home
-            page so people can continue scrolling.
-          </p>
         </article>
       </section>
     </main>

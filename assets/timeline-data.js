@@ -28,10 +28,10 @@ window.timelineEvents = [
     imageClass: "visual-system"
   },
   {
-    year: "2022",
-    kicker: "Reach",
-    title: "The public launch",
-    summary: "The story moves out of draft mode and into the real world.",
+    year: "",
+    kicker: "Neither Holy nor Roman",
+    title: "The Holy Roman Empire",
+    summary: "The church during the Holy Roman Empire",
     page: "events/04-launch.html",
     accent: "#4dabf7",
     imageClass: "visual-launch"
